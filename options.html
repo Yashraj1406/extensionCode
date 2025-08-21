@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tab Group Snapshots - Settings</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+    }
+    
+    .section h3 {
+      margin-top: 0;
+      color: #1a73e8;
+    }
+    
+    .setting-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0;
+    }
+    
+    .pro-feature {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    
+    .pro-badge {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-left: 8px;
+    }
+    
+    button {
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background: #1557b0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .stat-number {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1a73e8;
+    }
+    
+    .stat-label {
+      font-size: 12px;
+      color: #5f6368;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Tab Group Snapshots</h1>
+    <p>Lightweight session manager for Chrome's native tab groups</p>
+  </div>
+
+  <div class="section">
+    <h3>Usage Statistics</h3>
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-item">
+        <div class="stat-number" id="snapshotsTaken">0</div>
+        <div class="stat-label">Snapshots Taken</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="snapshotsRestored">0</div>
+        <div class="stat-label">Snapshots Restored</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="totalSnapshots">0</div>
+        <div class="stat-label">Total Saved</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Account Status</h3>
+    <div class="setting-item">
+      <span>Current Plan:</span>
+      <span id="planStatus">Free (5 snapshots max)</span>
+    </div>
+    <div class="setting-item">
+      <span>Member Since:</span>
+      <span id="memberSince">-</span>
+    </div>
+    <button id="upgradeBtn">Upgrade to Pro ($5.99)</button>
+    <div style="margin-top: 10px;">
+      <input type="text" id="licenseKey" placeholder="Enter license key" style="padding: 8px; margin-right: 8px;">
+      <button id="activateBtn">Activate</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Pro Features <span class="pro-badge">PRO</span></h3>
+    <div class="setting-item pro-feature" id="autoSnapshotSetting">
+      <span>Auto-snapshot on window close</span>
+      <input type="checkbox" id="autoSnapshot" disabled>
+    </div>
+    <div class="setting-item pro-feature" id="foldersSetting">
+      <span>Organize snapshots in folders</span>
+      <button disabled>Manage Folders</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Data Management</h3>
+    <div class="setting-item">
+      <span>Export all snapshots</span>
+      <button id="exportBtn">Export JSON</button>
+    </div>
+    <div class="setting-item">
+      <span>Import snapshots</span>
+      <input type="file" id="importFile" accept=".json" style="display: none;">
+      <button id="importBtn">Import JSON</button>
+    </div>
+    <div class="setting-item">
+      <span>Clear all data</span>
+      <button id="clearBtn" style="background: #d93025;">Clear All</button>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

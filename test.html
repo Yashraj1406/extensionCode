@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Group Snapshots - Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Tab Group Snapshots Extension - Test Page</h1>
+    
+    <div class="test-section">
+        <h2>Testing Instructions</h2>
+        <ol>
+            <li>Open multiple tabs in Chrome</li>
+            <li>Right-click on tabs and select "Add to new group"</li>
+            <li>Name your tab groups and assign colors</li>
+            <li>Right-click on this page (while in a tab group) to see the "📸 Take Snapshot" option</li>
+            <li>Click the extension icon to view saved snapshots</li>
+            <li>Test restoring snapshots by clicking on them</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Scenarios</h2>
+        <ul>
+            <li><strong>Free Tier Limit:</strong> Try creating more than 5 snapshots</li>
+            <li><strong>Group Colors:</strong> Test different tab group colors</li>
+            <li><strong>Multiple Tabs:</strong> Create groups with 2-10 tabs</li>
+            <li><strong>Restoration:</strong> Verify tabs open in correct order with proper grouping</li>
+            <li><strong>Deletion:</strong> Test deleting snapshots</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li>Context menu appears only when right-clicking in a tab group</li>
+            <li>Snapshots preserve tab order, group name, and color</li>
+            <li>Free users limited to 5 snapshots</li>
+            <li>Notifications appear for successful operations</li>
+            <li>Popup shows snapshot count and upgrade banner when needed</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      width: 350px;
+      min-height: 400px;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+    }
+    
+    .header {
+      background: #f8f9fa;
+      padding: 16px;
+      border-bottom: 1px solid #e9ecef;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a73e8;
+    }
+    
+    .stats {
+      font-size: 12px;
+      color: #5f6368;
+      margin-top: 4px;
+    }
+    
+    .content {
+      padding: 16px;
+    }
+    
+    .snapshot-item {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #e8eaed;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .snapshot-item:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .group-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .snapshot-info {
+      flex: 1;
+    }
+    
+    .snapshot-name {
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    
+    .snapshot-meta {
+      font-size: 12px;
+      color: #5f6368;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #5f6368;
+    }
+    
+    .upgrade-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 12px 16px;
+      margin: 16px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+    }
+    
+    .upgrade-banner.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Tab Group Snapshots</h1>
+    <div class="stats" id="stats">0 snapshots saved</div>
+    <div style="text-align: right; margin-top: 8px;">
+      <button id="settingsBtn" style="background: none; border: none; color: #5f6368; cursor: pointer; font-size: 12px;">⚙️ Settings</button>
+    </div>
+  </div>
+  
+  <div class="upgrade-banner" id="upgradeBanner">
+    <div>🚀 Upgrade to Pro for unlimited snapshots!</div>
+    <div style="font-size: 12px; margin-top: 4px;">One-time purchase: $5.99</div>
+  </div>
+  
+  <div class="content">
+    <div id="snapshotsList"></div>
+    <div class="empty-state" id="emptyState">
+      <div>📁</div>
+      <div style="margin-top: 12px;">No snapshots yet</div>
+      <div style="font-size: 12px; margin-top: 8px;">Right-click on any tab group to create your first snapshot</div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
